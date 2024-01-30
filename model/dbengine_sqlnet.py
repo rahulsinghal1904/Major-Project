@@ -32,8 +32,7 @@ class DBEngine:
             c, t = tup.split()
             schema[c] = t
         select = 'col{}'.format(select_index)
-        agg = agg_ops[aggregation_index]
-        if agg:
+        if agg := agg_ops[aggregation_index]:
             select = '{}({})'.format(agg, select)
         where_clause = []
         where_map = {}
@@ -74,8 +73,7 @@ class DBEngine:
             c, t = tup.split()
             schema[c] = t
         select = 'col{}'.format(select_index)
-        agg = agg_ops[aggregation_index]
-        if agg:
+        if agg := agg_ops[aggregation_index]:
             select = '{}({})'.format(agg, select)
         where_clause = []
         where_map = {}
