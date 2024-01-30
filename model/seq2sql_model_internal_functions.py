@@ -240,8 +240,7 @@ def check_sc_sa_pairs(tb, pr_sc, pr_sa, ):
     for b, pr_sc1 in enumerate(pr_sc):
         pr_sa1 = pr_sa[b]
         hd_types1 = tb[b]['types']
-        hd_types11 = hd_types1[pr_sc1]
-        if hd_types11 == 'text':
+        if (hd_types11 := hd_types1[pr_sc1]) == 'text':
             if pr_sa1 == 0 or pr_sa1 == 3:  # ''
                 check[b] = True
             else:
@@ -372,10 +371,9 @@ def merge_wv_t1_eng(where_str_tokens, NLq):
 
         # Change the special characters
         # maybe necessary for some case?
-        w_token = special.get(raw_w_token, raw_w_token)
 
         # check the double quote
-        if w_token == '"':
+        if (w_token := special.get(raw_w_token, raw_w_token)) == '"':
             double_quote_appear = 1 - double_quote_appear
 
         # Check whether ret is empty. ret is selected where condition.

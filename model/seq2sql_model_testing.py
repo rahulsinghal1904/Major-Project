@@ -39,8 +39,7 @@ def generate_sql_q1(sql_i1, tb1):
     sql_query_part1 = f'SELECT {select_agg}({select_header}) '
 
 
-    where_num = len(sql_i1['conds'])
-    if where_num == 0:
+    if (where_num := len(sql_i1['conds'])) == 0:
         sql_query_part2 = f'FROM {select_table}'
         # sql_plus_query_part2 = f'FROM {select_table}'
 
@@ -145,8 +144,7 @@ def generate_sql_q1(sql_i1, tb1):
     sql_query_part1 = f'SELECT {select_agg}({select_header}) '
 
 
-    where_num = len(sql_i1['conds'])
-    if where_num == 0:
+    if (where_num := len(sql_i1['conds'])) == 0:
         sql_query_part2 = f'FROM {select_table}'
         # sql_plus_query_part2 = f'FROM {select_table}'
 

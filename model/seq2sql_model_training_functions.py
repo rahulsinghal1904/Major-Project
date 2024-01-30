@@ -65,8 +65,7 @@ def Loss_wv_se(s_wv, g_wn, g_wvi):
     for b, g_wvi1 in enumerate(g_wvi):
         # for i_wn, g_wvi11 in enumerate(g_wvi1):
 
-        g_wn1 = g_wn[b]
-        if g_wn1 == 0:
+        if (g_wn1 := g_wn[b]) == 0:
             continue
         g_wvi1 = torch.tensor(g_wvi1).to(device)
         g_st1 = g_wvi1[:,0]
@@ -288,10 +287,10 @@ def merge_wv_t1_eng(where_str_tokens, NLq):
             continue
 
         # Change the special characters
-        w_token = special.get(raw_w_token, raw_w_token)  # maybe necessary for some case?
+# maybe necessary for some case?
 
         # check the double quote
-        if w_token == '"':
+        if (w_token := special.get(raw_w_token, raw_w_token)) == '"':
             double_quote_appear = 1 - double_quote_appear
 
         # Check whether ret is empty. ret is selected where condition.
@@ -344,8 +343,7 @@ def get_cnt_sw_list(g_sc, g_sa, g_wn, g_wc, g_wo, g_wvi,
 def get_cnt_sc_list(g_sc, pr_sc):
     cnt_list = []
     for b, g_sc1 in enumerate(g_sc):
-        pr_sc1 = pr_sc[b]
-        if pr_sc1 == g_sc1:
+        if (pr_sc1 := pr_sc[b]) == g_sc1:
             cnt_list.append(1)
         else:
             cnt_list.append(0)
@@ -385,9 +383,8 @@ def get_cnt_wo_list(g_wn, g_wc, g_wo, pr_wc, pr_wo, mode):
         pr_wc1 = pr_wc[b]
         pr_wo1 = pr_wo[b]
         pr_wn1 = len(pr_wo1)
-        g_wn1 = g_wn[b]
 
-        if g_wn1 != pr_wn1:
+        if (g_wn1 := g_wn[b]) != pr_wn1:
             cnt_list.append(0)
             continue
         else:
