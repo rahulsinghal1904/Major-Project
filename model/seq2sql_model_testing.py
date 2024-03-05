@@ -81,7 +81,7 @@ def report_detail(hds, nlu,
     # print(f's_wc: {s_wc[0]}')
     # print(f's_wo: {s_wo[0]}')
     # print(f's_wv: {s_wv[0][0]}')
-    print(f'===============================')
+    print('===============================')
     print(f'g_sc : {g_sc}')
     print(f'pr_sc: {pr_sc}')
     print(f'g_sa : {g_sa}')
@@ -100,14 +100,14 @@ def report_detail(hds, nlu,
     print(f'pr_sql_q: {pr_sql_q}')
     print(f'g_ans: {g_ans}')
     print(f'pr_ans: {pr_ans}')
-    print(f'--------------------------------')
+    print('--------------------------------')
 
     print(cnt_list)
 
     print(f'acc_lx = {cnt_lx / cnt:.3f}, acc_x = {cnt_x / cnt:.3f}\n',
           f'acc_sc = {cnt_sc / cnt:.3f}, acc_sa = {cnt_sa / cnt:.3f}, acc_wn = {cnt_wn / cnt:.3f}\n',
           f'acc_wc = {cnt_wc / cnt:.3f}, acc_wo = {cnt_wo / cnt:.3f}, acc_wv = {cnt_wv / cnt:.3f}')
-    print(f'===============================')
+    print('===============================')
 
 def generate_sql_q(sql_i, tb):
     sql_q = []

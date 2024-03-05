@@ -31,7 +31,7 @@ def train(seq2sql_model,roberta_model,model_optimizer,roberta_optimizer,roberta_
 
 
     # Engine for SQL querying.
-    engine = DBEngine(os.path.join(path_wikisql, f"train.db"))
+    engine = DBEngine(os.path.join(path_wikisql, "train.db"))
     count = 0  # count the # of examples
     for batch_index, batch in enumerate(tqdm(train_loader)):
         count += len(batch)
